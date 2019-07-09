@@ -20,7 +20,7 @@ import java.util.concurrent.Executors;
 
 class ServerHanlder extends SimpleChannelHandler {
 
-    //通道被关闭的时候会被触发
+    //通道被关闭的时候会被触发2222
     @Override
     public void channelClosed(ChannelHandlerContext ctx, ChannelStateEvent e) throws Exception {
         super.channelClosed(ctx, e);
