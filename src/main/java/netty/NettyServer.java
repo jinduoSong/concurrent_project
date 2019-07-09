@@ -73,6 +73,7 @@ public class NettyServer {
                 return pipeline;
             }
         });
+
         //绑定端口号
         serverBootstrap.bind(new InetSocketAddress(8080));
         System.out.println("服务器端已经启动");
