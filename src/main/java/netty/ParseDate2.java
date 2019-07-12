@@ -39,5 +39,6 @@ public class ParseDate2 implements Runnable {
         for (int i = 0; i < 1000; i++) {
             executorService.execute(new ParseDate2(i));
         }
+        executorService.shutdown();
     }
 }
