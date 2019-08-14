@@ -1,4 +1,4 @@
-package disruptor;
+package itmayi.disruptor;
 
 import com.lmax.disruptor.EventFactory;
 

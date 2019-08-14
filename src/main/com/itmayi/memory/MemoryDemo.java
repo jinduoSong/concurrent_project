@@ -1,4 +1,4 @@
-package memory;
+package itmayi.memory;
 
 import java.text.DecimalFormat;
 

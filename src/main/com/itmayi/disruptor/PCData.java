@@ -1,4 +1,4 @@
-package disruptor;
+package itmayi.disruptor;
 
 /**
  * <p>Title: </p>
