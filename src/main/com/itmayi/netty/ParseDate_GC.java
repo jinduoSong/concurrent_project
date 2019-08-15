@@ -1,4 +1,4 @@
-package netty;
+package itmayi.netty;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

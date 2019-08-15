@@ -1,4 +1,4 @@
-package netty;
+package itmayi.netty;
 
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.runner.Runner;

@@ -1,4 +1,4 @@
-package netty;
+package itmayi.netty;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -13,19 +13,22 @@ import java.util.concurrent.Executors;
  * @author songjd
  * @date 16:56 2019/7/10.
  */
-public class ParseDate implements Runnable{
-    private static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+public class ParseDate2 implements Runnable {
+    static ThreadLocal<SimpleDateFormat> threadLocal = new ThreadLocal<SimpleDateFormat>();
 
     int i = 0;
 
-    public ParseDate(int i) {
+    public ParseDate2(int i) {
         this.i = i;
     }
 
     public void run() {
         try {
-            Date date = simpleDateFormat.parse("2015-03-09 19:29:" + i % 60);
-            System.out.println(i+":"+date);
+            if (threadLocal.get() == null) {
+                threadLocal.set(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
+            }
+            Date date = threadLocal.get().parse("2015-03-09 19:29:" + i % 60);
+            System.out.println(i + ":" + date);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -34,7 +37,8 @@ public class ParseDate implements Runnable{
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         for (int i = 0; i < 1000; i++) {
-            executorService.execute(new ParseDate(i));
+            executorService.execute(new ParseDate2(i));
         }
+        executorService.shutdown();
     }
 }

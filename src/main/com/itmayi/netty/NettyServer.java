@@ -1,4 +1,4 @@
-package netty;
+package itmayi.netty;
 
 import org.jboss.netty.bootstrap.ServerBootstrap;
 import org.jboss.netty.channel.*;

@@ -1,4 +1,4 @@
-package netty;
+package itmayi.netty;
 
 import java.util.Random;
 import java.util.concurrent.*;
