@@ -1,5 +1,7 @@
 package itmayi.java8;
 
+import java.util.Objects;
+
 /**
  * <p>Title: </p>
  * <p>Description: </p>
@@ -49,5 +51,21 @@ public class Employee {
                 ", age=" + age +
                 ", salary=" + salary +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return Objects.equals(name, employee.name) &&
+                Objects.equals(age, employee.age) &&
+                Objects.equals(salary, employee.salary);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(name, age, salary);
     }
 }
